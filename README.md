@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# SalesLoft UI Exercise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Why
 
-## Available Scripts
+At SalesLoft, we are looking for team oriented, technically strong, and results focused engineers. We believe in empowering engineers to work in ways that bring out the best in them. With that in mind, we’ve designed this exercise to be done in your time instead of a traditonal on the spot whiteboarding challenge. We use this exercise to evaluate candidates' technical competency, but also using it as a way for you to have an idea of what it is like working at SalesLoft.
 
-In the project directory, you can run:
+The exercise is written in React, and we’ve included a few libraries (Styled Components / React Testing Library) that we use daily. If you are not familiar with them or more comfortable with other tools, feel free to use whatever works best for you. We want this to be a good representation of what a typical day looks like, so we have included a [Card](https://github.com/SalesLoft/ui-engineer-exercise/blob/master/CARD.md) that lays out the specific requirements and acceptance criteria for the exercise along with an inspectable [mock](https://www.figma.com/file/rAGW6VoGxdYKaEgQdGZ9jY/UI-Engineering-Exercise?node-id=0%3A1).
 
-### `npm start`
+We also believe in continuous improvement; if you have any feedback about the exercise, please submit via [this google form](https://docs.google.com/forms/d/e/1FAIpQLSegccTpT9f0xZu13ZNyABGu8alL_YzSXhPNSGR1JtZPfuCECg/viewform).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repo
+   `$ git clone git@github.com:SalesLoft/ui-engineer-exercise.git`
+2. Install dependencies
+   `$ npm i`
+3. Start the application
+   `$ npm start`
+   
+## Inspecting the mock
 
-### `npm test`
+1. Click the link to figma and create a free account
+2. Select an element to view its styles
+3. Hover over elements in order to see layout and spacing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Submission
 
-### `npm run build`
+Submit the exercise via Greenhouse. The submission should include:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- A link to source files or Github repo
+- A link to a running version of the application (We recommend Netlify)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setting up Netlify
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Login to your Netlify account or create one with your Github account
+- Click the “Sites” tab and click the button “New site from Git”
+- Follow the setup guide
+  - Connect Netlify to your Github account
+  - Pick the repo for your exercise (If it’s not listed, you may need to configure [Netlify access to Github](https://github.com/apps/netlify/installations/new) )
+  - For “Branch to Deploy” Choose the branch where your final work is stored
+  - Build command - `npm run build`
+  - Publish Directory - `build`
