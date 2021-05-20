@@ -27,7 +27,7 @@ We also believe in continuous improvement; if you have any feedback about the ex
 
 Submit the exercise via Greenhouse. The submission should include:
 
-- A link to source files or Github repo
+- A link to the Github repo
 - A link to a running version of the application (We recommend Netlify)
 
 ## Setting up Netlify
