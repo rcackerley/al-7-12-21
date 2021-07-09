@@ -1,5 +1,17 @@
 /**
- *  Formates date to MMM DD, YYYY (i.e. Apr 8, 2020)
+ *  Helper function for fetching data
+ *
+ * @param  {String}  url endpoint you want to hit
+ * @return {JSON} formatted json data from endpoint
+ */
+export async function fetchData(url){
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+
+/**
+ *  Formats date to MMM DD, YYYY (i.e. Apr 8, 2020)
  *
  * @param  {String}      dateString
  * @return {string}

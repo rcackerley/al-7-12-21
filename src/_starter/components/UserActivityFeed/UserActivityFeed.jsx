@@ -6,7 +6,7 @@ import TimelineCard from "../TimelineCard/TimelineCard";
 
 const UserActivtiyFeedNav = <nav>Activity Tracking Reminders</nav>
 
-const UserActivityFeed = ({ pastActivities }) => {
+const UserActivityFeed = ({ pastActivities, userName }) => {
 
   return (
     <ContentCard headerComponent={UserActivtiyFeedNav}>
@@ -14,7 +14,7 @@ const UserActivityFeed = ({ pastActivities }) => {
       <h1>Past Activities</h1>
       {
         pastActivities.map((activity) => (
-          <TimelineCard activity={activity} />
+          <TimelineCard activity={activity} userName={userName} />
         ))
       }
     </ContentCard>

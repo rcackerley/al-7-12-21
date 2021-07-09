@@ -5,6 +5,7 @@ import UserActivityFeed from "../../components/UserActivityFeed/UserActivityFeed
 import UserNameCard from "../../components/UserNameCard/UserNameCard";
 
 import { getColor } from "../../theme/theme";
+import { fetchData } from "../../services";
 
 const PageLayout = styled.div`
   height: 100vh;
@@ -36,41 +37,31 @@ const Center = styled.main`
 `;
 
 const UserActivity = () => {
-  const URL = `https://ui-offline-exercise.s3.amazonaws.com/data/people.json`;
+  const USER_DATA_URL = `https://ui-offline-exercise.s3.amazonaws.com/data/people.json`;
+
   const [ userData, setUserData ] = useState({});
   const [ upcomingActivities, setUpcomingActivities ] = useState({});
   const [ pastActivities, setPastActivities ] = useState({});
 
+  async function fetchUserData(){
+    const data = await fetchData(USER_DATA_URL);
+    setUserData(data);
+    const { activities, upcoming_activities } = data;
+
+    const activitiesData = await fetchData(activities._href)
+    setPastActivities(activitiesData.data)
+
+    const upcomingActivitiesData = await fetch(upcoming_activities._href);
+    setUpcomingActivities(upcomingActivitiesData.data);
+  }
+
   useEffect(() => {
-    // Fetches initial user data
-    fetch(URL)
-      .then(response => response.json())
-      .then(data => {
-        const { activities, upcoming_activities} = data;
-        console.log(data)
-        const {
-          displayName: display_name,
-          linkedinUrl: linkedin_url,
-          twitterHandle: twitter_handle,
-          personCompanyWebsite: person_company_website,
-          personalWebsite: personal_website,
-        } = data;
-        setUserData(data);
-        // Fetches upcoming activities
-        fetch(upcoming_activities._href)
-          .then(response => response.json())
-          .then(({data}) => setUpcomingActivities(data))
-
-        // Fetches the past activities
-        fetch(activities._href)
-          .then(response => response.json())
-          .then(({data}) => setPastActivities(data));
-
-      });
+    fetchUserData();
   }, []);
 
   return (
-    <PageLayout>
+    // <UseUserContext.Provider value={userData}>
+      <PageLayout>
         <Header>People</Header>
         <Left>
           <UserNameCard
@@ -84,11 +75,12 @@ const UserActivity = () => {
         </Left>
         <Center>
           {pastActivities.length && (
-            <UserActivityFeed pastActivities={ pastActivities } />
+            <UserActivityFeed pastActivities={ pastActivities } userName={userData.display_name} />
           )}
         </Center>
         <Right/>
-    </PageLayout>
+      </PageLayout>
+    // </UseUserContext.Provider>
   )
 }
 
