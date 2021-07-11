@@ -6,6 +6,8 @@
  */
 export async function fetchData(url){
   const response = await fetch(url);
+  console.log('url', url)
+  console.log('response', response)
   const data = await response.json();
   return data;
 }

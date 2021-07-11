@@ -13,58 +13,54 @@ const Circle = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${getColor("blue")};
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: none;
-  color: ${getColor("white")};
   cursor: pointer;
 `;
 
 const CircleIcon = ({ type }) => {
   let icon;
-  let backgroundColor;
   let iconColor;
-
-  // if(type === "added_to_cadence"){icon = (<RocketIcon />)}
-  // if(type === "call"){icon = (<PhoneIcon />)}
-  // if(type === "email_reply"){icon = (<ReplyIcon />)}
-  // if(type === "sent_email"){icon = (<PaperPlaneIcon />)}
-  // if(type === "success"){icon = (<BadgeIcon />)}
-  // if(type === "voicemail"){icon = (<VoicemailIcon />)}
 
   switch(type) {
     case "added_to_cadence":
-     icon = (<RocketIcon />);
+      iconColor = getColor("blue");
+      icon = (<RocketIcon style={{color: iconColor}}/>);
     break;
 
     case "call":
-     icon = (<PhoneIcon />);
+      iconColor = getColor("teal");
+      icon = (<PhoneIcon style={{color: iconColor}}/>);
     break;
 
     case "email_reply":
-     icon = (<ReplyIcon />);
+      iconColor = getColor("teal");
+      icon = (<ReplyIcon style={{color: iconColor}} />);
     break;
 
     case "sent_email":
-     icon = (<PaperPlaneIcon />);
+      iconColor = getColor("blueDarkest");
+      icon = (<PaperPlaneIcon style={{color: iconColor}} />);
     break;
 
     case "success":
-     icon = (<BadgeIcon />);
+      iconColor = getColor("blueDarkest");
+      icon = (<BadgeIcon style={{color: iconColor}} />);
     break;
 
     case "voicemail":
-     icon = (<VoicemailIcon />);
+      iconColor = getColor("teal");
+      icon = (<VoicemailIcon style={{color: iconColor}} />);
     break;
 
     default:
-      icon = (<RocketIcon />);
+      icon = (<RocketIcon style={{color: iconColor}} />);
   }
 
   return (
-    <Circle>
+    <Circle style={{backgroundColor: `${iconColor}10`}}>
       { icon }
     </Circle>
   )
