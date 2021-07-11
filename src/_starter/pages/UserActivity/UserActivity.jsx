@@ -16,13 +16,17 @@ const PageLayout = styled.div`
   grid-template-areas:
     'header header header'
     'left center right';
-  grid-template-rows: 50px 9fr;
+  grid-template-rows: fit-content(100%) 9fr;
   grid-template-columns: 3fr 8fr 4fr;
 `;
 
 const Header = styled.h1`
   grid-area: header;
   background: ${getColor("white")};
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  color: ${getColor("greyDarkest")};
   margin-bottom: 10px;
 `;
 const Left = styled.aside`
@@ -51,10 +55,10 @@ const UserActivity = () => {
 
     const activitiesData = await fetchData(activities._href)
     setPastActivities(activitiesData.data)
-    console.log('upcoming_activities', data.upcoming_activities);
-    const upcomingActivitiesData = await fetch(upcoming_activities._href);
+    console.log('upcoming_activities', data.upcoming_activities._href);
+    const upcomingActivitiesData = await fetch(data.upcoming_activities._href);
+    console.log('upcomingActivitiesData', upcomingActivitiesData);
     setUpcomingActivities(upcomingActivitiesData.data);
-    console.log('data', data);
   }
 
   useEffect(() => {

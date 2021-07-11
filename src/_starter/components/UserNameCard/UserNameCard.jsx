@@ -14,32 +14,37 @@ import { default as TwitterIcon } from "../../shared/Icons/Twitter";
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 `;
 
 const HeaderIconWrapper = styled.div`
   display: flex;
+  margin: 8px 0;
+  color: ${({ color }) => (color ? getColor(color) : getColor("black"))};
   `;
 
-const StarIconWrapper = styled.div`
-  color: ${getColor("orange")};
-`;
-
 const UserNameHeader = styled.div`
+  margin-top: 20px;
   text-align: center;
 `;
 
 const SocialWrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
 `;
+
+const FacebookLink = styled.a`
+  margin-bottom: 16px;
+`;
+
 
 const UserNameCardHeader =
   <Header>
-    <HeaderIconWrapper>
-      <StarIconWrapper>
-        <StarOutlinedIcon />
-      </StarIconWrapper>
+    <HeaderIconWrapper color="orange">
+      <StarOutlinedIcon />
     </HeaderIconWrapper>
     <HeaderIconWrapper>
       <EllipsisHorizontalIcon />

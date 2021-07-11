@@ -8,13 +8,23 @@ const UserActionLinkWrap = styled.div`
   flex-direction: row;
   align-items: center;
   color: ${getColor("blue")};
-`
+  margin-left: 27px;
+`;
+
+const IconWrap = styled.div`
+  display: flex;
+  margin-right: 6px;
+`;
 
 const UserActionLink = ({ children, icon }) => {
   const Icon = icon;
   return (
     <UserActionLinkWrap>
-      {icon && <Icon />}
+        {icon &&
+          <IconWrap>
+            <Icon />
+          </IconWrap>
+        }
       <a>
         {children}
       </a>

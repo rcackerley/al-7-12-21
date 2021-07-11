@@ -37,6 +37,12 @@ const UserActionsWrapper = styled.div`
   margin-left: auto;
 `;
 
+const EmptyActionText = styled.p`
+  text-align:center;
+  margin-bottom: 16px;
+  color: ${getColor("greyDark")};
+`;
+
 const UserActivityFeed = ({ pastActivities, userName }) => {
 
   const [ activeTab, setActiveTab ] = useState("Activity");
@@ -44,6 +50,9 @@ const UserActivityFeed = ({ pastActivities, userName }) => {
   const UserActivityComponent =
     <div>
       <h1>Upcoming Activities</h1>
+      <EmptyActionText>
+        Once actions are scheduled, they'll appear here
+      </EmptyActionText>
       <h1>Past Activities</h1>
       { pastActivities.length &&
         pastActivities.map((activity) => (

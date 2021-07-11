@@ -9,7 +9,7 @@ const ContentCardLayout = styled.div`
   grid-template-areas:
     'header'
     'content';
-  grid-template-rows: 48px fit-content(100%);
+  grid-template-rows: fit-content(100%) fit-content(100%);
   grid-template-columns: 1fr;
   margin-bottom: 10px;
 `;
