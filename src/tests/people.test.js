@@ -18,7 +18,7 @@ describe("The navigation should change the page", () => {
     const navId = ['activity', 'tracking', 'reminders'];
 
     navId.map(async (id) => {
-      await waitFor(() => screen.findByTestId(`people-page-nav-${id}`));
+      await screen.findByTestId(`people-page-nav-${id}`);
       screen.getByTestId(`people-page-nav-${id}`).click();
       expect(screen.getByTestId(`data-testid="people-page-content"`))
         .toHaveTextContent(id);
@@ -34,15 +34,14 @@ describe("Social Links should exist and have hrefs", () => {
   it('each link should have accessible description', () => {
     render(<App />);
     navLinks.map(async link => {
-      await waitFor(() => (screen.findByTestId(`user-card-social-link-${link}`))
-      .toHaveAccessibleDescription());
+      await screen.getByTestId(`user-card-social-link-${link}`)
+        .toHaveAccessibleDescription();
     });
   })
   it('each link should have a href', () => {
     render(<App />);
     navLinks.map(async link => {
-      waitFor(() => expect(screen.findByTestId(`user-card-social-link-${link}`))
-      .toHaveAttribute("href"));
+      await screen.getByTestId(`user-card-social-link-${link}`).toHaveAttribute("href");
     });
   })
 })

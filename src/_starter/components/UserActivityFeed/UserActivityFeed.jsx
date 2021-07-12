@@ -56,7 +56,7 @@ const UserActivityFeed = ({ pastActivities, userName }) => {
       <h1>Past Activities</h1>
       { pastActivities.length &&
         pastActivities.map((activity) => (
-          <TimelineCard activity={activity} userName={userName} />
+          <TimelineCard key={pastActivities.id} activity={activity} userName={userName} />
         ))
       }
     </div>;
