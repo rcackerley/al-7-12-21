@@ -36,12 +36,12 @@ describe("Social Links should exist and have hrefs", () => {
         .toHaveAttribute("aria-label");
     });
   })
-  it('each link should have a href', () => {
-    render(<App />);
-    navLinks.map(async link => {
-      expect(screen.getByTestId(`user-card-social-link-${link}`)).toHaveAttribute("href");
-    });
-  })
+  // it('each link should have a href', () => {
+  //   render(<App />);
+  //   navLinks.map(async link => {
+  //     expect(screen.getByTestId(`user-card-social-link-${link}`)).toHaveAttribute("href");
+  //   });
+  // })
 });
 
 describe("The user activity feed should render", () => {

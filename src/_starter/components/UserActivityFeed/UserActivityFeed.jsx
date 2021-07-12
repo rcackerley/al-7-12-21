@@ -58,7 +58,7 @@ const UserActivityFeed = ({ pastActivities, userName }) => {
         <div data-testid="past-activity-feed">
           {
             pastActivities.map((activity) => (
-              <TimelineCard key={pastActivities.id} activity={activity} userName={userName} />
+              <TimelineCard data-testid="past-activity-feed-card" key={pastActivities.id} activity={activity} userName={userName} />
             ))
           }
         </div>
