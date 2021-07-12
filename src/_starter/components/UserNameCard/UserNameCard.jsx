@@ -62,7 +62,7 @@ const UserNameCard = ({
       <UserNameHeader>
         <h1>{displayName}</h1>
         <p>{title}</p>
-        <a aria-label="Link to user's Facebook site">Facebook</a>
+        <a aria-label="Link to user's Facebook site" href="https://www.facebook.com/" >Facebook</a>
       </UserNameHeader>
       <SocialIconsWrapper>
         <a data-testid="user-card-social-link-personal" aria-label="Link to user's personal website" href={personalWebsite}>

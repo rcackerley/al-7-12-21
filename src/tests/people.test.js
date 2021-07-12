@@ -32,14 +32,14 @@ describe("Social Links should exist and have hrefs", () => {
   it('each link should have accessible description', () => {
     render(<App />);
     navLinks.map(async link => {
-      expect(await screen.getByTestId(`user-card-social-link-${link}`))
+      expect(screen.getByTestId(`user-card-social-link-${link}`))
         .toHaveAttribute("aria-label");
     });
   })
   it('each link should have a href', () => {
     render(<App />);
     navLinks.map(async link => {
-      expect(await screen.getByTestId(`user-card-social-link-${link}`)).toHaveAttribute("href");
+      expect(screen.getByTestId(`user-card-social-link-${link}`)).toHaveAttribute("href");
     });
   })
 });

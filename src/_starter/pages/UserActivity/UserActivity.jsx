@@ -66,7 +66,7 @@ const UserActivity = () => {
 
     const activitiesData = await fetchData(activities._href)
     setPastActivities(activitiesData.data)
-    const upcomingActivitiesData = await fetch(data.upcoming_activities._href);
+    const upcomingActivitiesData = await fetch(upcoming_activities._href);
     setUpcomingActivities(upcomingActivitiesData.data);
   }
 

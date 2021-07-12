@@ -26,7 +26,7 @@ const UserActionLink = ({ children, icon }) => {
             <Icon />
           </IconWrap>
         }
-      <a>
+      <a href={`/${children}`}>
         {children}
       </a>
     </UserActionLinkWrap>
