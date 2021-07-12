@@ -29,11 +29,14 @@ const UserNameHeader = styled.div`
   text-align: center;
 `;
 
-const SocialWrapper = styled.div`
+const SocialIconsWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 16px;
   margin-bottom: 16px;
+  a {
+    margin: 0 5px;
+  }
 `;
 
 const FacebookLink = styled.a`
@@ -66,20 +69,20 @@ const UserNameCard = ({
         <p>{title}</p>
         <a aria-label="Link to user's Facebook site">Facebook</a>
       </UserNameHeader>
-      <SocialWrapper>
+      <SocialIconsWrapper>
         <a aria-label="Link to user's personal website" href={personalWebsite}>
           <CloudIcon />
         </a>
         <a aria-label="Link to user's LinkedIn" href={linkedinUrl}>
           <LinkedInIcon />
         </a>
-        <a aria-label="Link to user's twitter" href={twitterHandle}>
+        <a aria-label="Link to user's twitter" href={`https://twitter.com/${twitterHandle}`}>
           <TwitterIcon />
         </a>
         <a aria-label="Link to user's company website" href={personCompanyWebsite}>
           <LinkIcon />
         </a>
-      </SocialWrapper>
+      </SocialIconsWrapper>
     </ContentCard>
   );
 }

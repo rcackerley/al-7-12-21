@@ -9,6 +9,7 @@ const UserActionLinkWrap = styled.div`
   align-items: center;
   color: ${getColor("blue")};
   margin-left: 27px;
+  white-space: nowrap;
 `;
 
 const IconWrap = styled.div`

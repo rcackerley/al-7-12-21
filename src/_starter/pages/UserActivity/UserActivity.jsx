@@ -5,7 +5,7 @@ import EmptyCard from "../../components/EmptyCard/EmptyCard";
 import UserActivityFeed from "../../components/UserActivityFeed/UserActivityFeed"
 import UserNameCard from "../../components/UserNameCard/UserNameCard";
 
-import { getColor } from "../../theme/theme";
+import { getBreakpoint, getColor } from "../../theme/theme";
 import { fetchData } from "../../services";
 
 const PageLayout = styled.div`
@@ -13,14 +13,26 @@ const PageLayout = styled.div`
   padding: 10px;
   display: grid;
   background: ${getColor("greyLightest")};
-  grid-template-areas:
-    'header header header'
-    'left center right';
-  grid-template-rows: fit-content(100%) 9fr;
-  grid-template-columns: 3fr 8fr 4fr;
+  @media (min-width: ${getBreakpoint("xs")}){
+    grid-template-areas:
+      'header'
+      'left'
+      'center'
+      'right';
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: ${getBreakpoint("md")}){
+    grid-template-areas:
+      'header header header'
+      'left center right';
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  column-gap: 10px;
 `;
 
-const Header = styled.h1`
+const Header = styled.header`
   grid-area: header;
   background: ${getColor("white")};
   display: flex;
@@ -34,11 +46,10 @@ const Left = styled.aside`
 `;
 const Right = styled.aside`
   grid-area: right;
-  margin-left: 10px;
 `;
 const Center = styled.main`
+  flex: 1;
   grid-area: center;
-  margin-left: 10px;
 `;
 
 const UserActivity = () => {
@@ -55,9 +66,7 @@ const UserActivity = () => {
 
     const activitiesData = await fetchData(activities._href)
     setPastActivities(activitiesData.data)
-    console.log('upcoming_activities', data.upcoming_activities._href);
     const upcomingActivitiesData = await fetch(data.upcoming_activities._href);
-    console.log('upcomingActivitiesData', upcomingActivitiesData);
     setUpcomingActivities(upcomingActivitiesData.data);
   }
 
@@ -67,7 +76,7 @@ const UserActivity = () => {
 
   return (
     <PageLayout>
-      <Header>People</Header>
+      <Header data-testid="people-page-title">People</Header>
       <Left>
         <UserNameCard
           displayName={userData.display_name}
