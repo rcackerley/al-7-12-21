@@ -39,11 +39,6 @@ const SocialIconsWrapper = styled.div`
   }
 `;
 
-const FacebookLink = styled.a`
-  margin-bottom: 16px;
-`;
-
-
 const UserNameCardHeader =
   <Header>
     <HeaderIconWrapper color="orange">
@@ -69,17 +64,17 @@ const UserNameCard = ({
         <p>{title}</p>
         <a aria-label="Link to user's Facebook site">Facebook</a>
       </UserNameHeader>
-      <SocialIconsWrapper data-testid="user-card-social-links">
-        <a aria-label="Link to user's personal website" href={personalWebsite}>
+      <SocialIconsWrapper>
+        <a data-testid="user-card-social-link-personal" aria-label="Link to user's personal website" href={personalWebsite}>
           <CloudIcon />
         </a>
-        <a aria-label="Link to user's LinkedIn" href={linkedinUrl}>
+        <a data-testid="user-card-social-link-linkedin" aria-label="Link to user's LinkedIn" href={linkedinUrl}>
           <LinkedInIcon />
         </a>
-        <a aria-label="Link to user's twitter" href={`https://twitter.com/${twitterHandle}`}>
+        <a data-testid="user-card-social-link-twitter" aria-label="Link to user's twitter" href={`https://twitter.com/${twitterHandle}`}>
           <TwitterIcon />
         </a>
-        <a aria-label="Link to user's company website" href={personCompanyWebsite}>
+        <a data-testid="user-card-social-link-company" aria-label="Link to user's company website" href={personCompanyWebsite}>
           <LinkIcon />
         </a>
       </SocialIconsWrapper>

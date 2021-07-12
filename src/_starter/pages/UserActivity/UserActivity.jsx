@@ -92,7 +92,7 @@ const UserActivity = () => {
       </Left>
       <Center>
         {!!pastActivities.length && (
-          <UserActivityFeed pastActivities={ pastActivities } userName={userData.display_name} />
+          <UserActivityFeed pastActivities={ pastActivities } upcomingActivities={ upcomingActivities } userName={userData.display_name} />
         )}
       </Center>
       <Right>
