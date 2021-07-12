@@ -69,7 +69,7 @@ const UserNameCard = ({
         <p>{title}</p>
         <a aria-label="Link to user's Facebook site">Facebook</a>
       </UserNameHeader>
-      <SocialIconsWrapper>
+      <SocialIconsWrapper data-testid="user-card-social-links">
         <a aria-label="Link to user's personal website" href={personalWebsite}>
           <CloudIcon />
         </a>

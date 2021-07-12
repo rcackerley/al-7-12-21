@@ -68,14 +68,17 @@ const UserActivityFeed = ({ pastActivities, userName }) => {
     {
       title: "Activity",
       pathName: "/activity",
+      id: "activity",
     },
     {
       title: "Tracking",
       pathName: "/tracking",
+      id: "tracking",
     },
     {
       title: "Reminders",
       pathName: "/reminders",
+      id: "reminders",
     }
   ];
   const content = {
@@ -110,7 +113,9 @@ const UserActivityFeed = ({ pastActivities, userName }) => {
           <UserActionLink icon={PlusIcon}>Add a Note</UserActionLink>
         </UserActionsWrapper>
       </ButtonsWrap>
-      {content[activeTab].content ? content[activeTab].content : <h1>Something Went wrong</h1>}
+      <div data-testid="people-page-content">
+        {content[activeTab].content ? content[activeTab].content : <h1>Something Went wrong</h1>}
+      </div>
     </ContentCard>
   );
 };

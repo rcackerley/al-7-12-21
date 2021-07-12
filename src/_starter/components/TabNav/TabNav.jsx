@@ -21,7 +21,7 @@ const TabNav = ({ activeTab, links, onClick }) => {
     <TabNavWrapper>
       {
         links.map((link) => {
-          return (<Tab isActive={ activeTab === link.title } onClick={() => onClick(link.title)}>{ link.title }</Tab>)})
+          return (<Tab isActive={ activeTab === link.title } onClick={() => onClick(link.title)} data-testid={`people-page-nav-${link.id}`}>{ link.title }</Tab>)})
       }
     </TabNavWrapper>
   );
